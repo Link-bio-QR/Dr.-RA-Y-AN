@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Rayan Vet Clinic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --teal-main: #3D8C8D;
+            --text-dark: #1A1A1A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background-color: #d1d8d6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container linked to Background.jpeg */
+        .poster-card {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 1 / 1.52;
+            background-image: url('Background.jpeg');
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 36px;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Content layer over the image */
+        .buttons-container {
+            position: absolute;
+            top: 36.5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        /* Interactive Pill Buttons Overlay */
+        .pill-btn {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 44px;
+            background: #FAF8F5;
+            border: 2px solid #1A1A1A;
+            border-radius: 25px;
+            text-decoration: none;
+            color: inherit;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .pill-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Left Icon Pill Wrapper */
+        .pill-icon-wrapper {
+            width: 60px;
+            height: 100%;
+            background-color: var(--teal-main);
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        /* Text area inside button */
+        .pill-content {
+            flex: 1;
+            padding: 0 14px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .pill-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .pill-title-kurdish {
+            font-size: 15px;
+            font-weight: bold;
+            color: #000;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: right;
+            width: 100%;
+        }
+
+        /* Right Arrow Icon */
+        .pill-arrow {
+            padding-right: 14px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #1A1A1A;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Bottom Slogan Section in the Green Area */
+        .bottom-slogan {
+            position: absolute;
+            bottom: 3.5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            text-align: center;
+            color: #FFFFFF;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+<div class="poster-card">
+
+    <!-- Interactive Buttons Area Overlaying Background.jpeg -->
+    <div class="buttons-container">
+        
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@dr_rayanali" target="_blank" class="pill-btn">
+            <div class="pill-icon-wrapper">
+                <i class="fa-brands fa-tiktok"></i>
+            </div>
+            <div class="pill-content">
+                <div class="pill-title">TikTok</div>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/dr_rayanvetclinic" target="_blank" class="pill-btn">
+            <div class="pill-icon-wrapper">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="pill-content">
+                <div class="pill-title">Instagram</div>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/share/18JutYZNhq/" target="_blank" class="pill-btn">
+            <div class="pill-icon-wrapper">
+                <i class="fa-brands fa-facebook-f"></i>
+            </div>
+            <div class="pill-content">
+                <div class="pill-title">Facebook</div>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <!-- Phone Number -->
+        <a href="tel:07761233000" class="pill-btn">
+            <div class="pill-icon-wrapper">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="pill-content">
+                <div class="pill-title-kurdish">ژمارەی تەلەفۆن</div>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/9647761233000" target="_blank" class="pill-btn">
+            <div class="pill-icon-wrapper">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="pill-content">
+                <div class="pill-title">WhatsApp</div>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <!-- Viber -->
+        <a href="viber://chat?number=%2B9647761233000" class="pill-btn">
+            <div class="pill-icon-wrapper">
+                <i class="fa-brands fa-viber"></i>
+            </div>
+            <div class="pill-content">
+                <div class="pill-title">Viber</div>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+        <!-- Location -->
+        <a href="#" class="pill-btn">
+            <div class="pill-icon-wrapper">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="pill-content">
+                <div class="pill-title-kurdish">ناونیشان</div>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        </a>
+
+    </div>
+
+    <!-- Bottom Slogan -->
+    <div class="bottom-slogan">
+        پسپۆڕی لە خزمەتکردن ، دڵسۆزی لە چارەسەر کردن
+    </div>
+
+</div>
+
+</body>
+</html>
