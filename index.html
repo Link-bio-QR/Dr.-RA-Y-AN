@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Rayan Vet Clinic</title>
-    <!-- Include Noto Naskh Arabic and Cairo fonts for authentic curved Kurdish font rendering -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -17,83 +16,90 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Times New Roman', Times, serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
-        body {
+        html, body {
+            width: 100%;
+            min-height: 100%;
             background-color: #d1d8d6;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 10px;
+            align-items: flex-start;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
-        /* Responsive Poster Card */
+        /* Responsive poster card with fixed aspect ratio */
         .poster-card {
             width: 100%;
-            max-width: 420px;
+            max-width: 480px;
             aspect-ratio: 1 / 1.52;
             background-image: url('Background.jpeg');
             background-size: 100% 100%;
             background-position: center;
             background-repeat: no-repeat;
-            border-radius: 28px;
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            margin: 0 auto;
         }
 
-        /* Flexible Buttons Container scaled down to fit all mobile screens perfectly */
+        @media (min-width: 500px) {
+            .poster-card {
+                border-radius: 24px;
+                margin: 20px auto;
+                overflow: hidden;
+            }
+        }
+
+        /* Positioned precisely in lower white section */
         .buttons-container {
             position: absolute;
-            top: 36%;
+            top: 40.5%;
             left: 50%;
             transform: translateX(-50%);
             width: 82%;
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 1.8%;
         }
 
-        /* Interactive Pill Buttons Overlay */
+        /* Compact Pill Buttons Overlay */
         .pill-btn {
             display: flex;
             align-items: center;
             width: 100%;
-            height: 36px;
+            height: clamp(25px, 4.2vw, 34px);
             background: #FAF8F5;
             border: 1.5px solid #1A1A1A;
             border-radius: 20px;
             text-decoration: none;
             color: inherit;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            transition: transform 0.15s, box-shadow 0.15s;
             direction: ltr;
         }
 
-        .pill-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+        .pill-btn:active {
+            transform: scale(0.98);
+            background-color: #f0ede6;
         }
 
         /* Icon Wrapper on the Left */
         .pill-icon-wrapper {
-            width: 48px;
             height: 100%;
+            aspect-ratio: 1.25 / 1;
             background-color: var(--teal-main);
             border-top-left-radius: 16px;
             border-bottom-left-radius: 16px;
-            border-top-right-radius: 24px;
-            border-bottom-right-radius: 24px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 15px;
+            font-size: clamp(9px, 2.6vw, 12.5px);
             flex-shrink: 0;
         }
 
@@ -107,7 +113,7 @@
         }
 
         .pill-title {
-            font-size: 13.5px;
+            font-size: clamp(9.5px, 2.6vw, 12px);
             font-weight: bold;
             color: #000;
             font-family: 'Times New Roman', Times, serif;
@@ -117,46 +123,28 @@
         /* Arrow Icon on the Right */
         .pill-arrow {
             padding-right: 12px;
-            font-size: 12px;
+            font-size: clamp(7.5px, 2vw, 9.5px);
             font-weight: bold;
             color: #1A1A1A;
             display: flex;
             align-items: center;
         }
 
-        /* Bottom Slogan Section using the exact matching Kurdish font style as the original logo header */
+        /* Bottom Slogan Section */
         .bottom-slogan {
             position: absolute;
-            bottom: 2.2%;
+            bottom: 2%;
             left: 50%;
             transform: translateX(-50%);
             width: 92%;
             text-align: center;
             color: #FFFFFF;
-            font-family: 'Cairo', 'Noto Naskh Arabic', sans-serif;
-            font-size: 12px;
+            font-family: 'Noto Naskh Arabic', Arial, sans-serif;
+            font-size: clamp(10px, 2.8vw, 13px);
             font-weight: 700;
             direction: rtl;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
             white-space: nowrap;
-        }
-
-        /* Media Queries for small mobile devices */
-        @media (max-height: 650px) {
-            .buttons-container {
-                gap: 3px;
-                top: 35.5%;
-            }
-            .pill-btn {
-                height: 32px;
-            }
-            .pill-title {
-                font-size: 12px;
-            }
-            .bottom-slogan {
-                font-size: 10.5px;
-                bottom: 1.8%;
-            }
         }
     </style>
 </head>
@@ -234,7 +222,7 @@
         </a>
 
         <!-- Location / Map -->
-        <a href="https://maps.google.com/?q=35.557,45.433" target="_blank" class="pill-btn">
+        <a href="https://maps.app.goo.gl/tpPzaLGFu7pY5Wwt8" target="_blank" class="pill-btn">
             <div class="pill-icon-wrapper">
                 <i class="fa-solid fa-location-dot"></i>
             </div>
@@ -247,9 +235,8 @@
     </div>
 
     <!-- Bottom Slogan -->
-   <div class="bottom-slogan">
-      پسپۆڕی لە خزمەتکردن ، دڵسۆزی لە چارەسەر کردن
-    
+    <div class="bottom-slogan">
+        پسپۆڕی لە خزمەتکردن ، دڵسۆزی لە چارەسەر کردن
     </div>
 
 </div>
