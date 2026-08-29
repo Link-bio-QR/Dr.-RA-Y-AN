@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-naskh: var(--font-naskh), "Noto Naskh Arabic", serif;
+
+  /* ---- Unified teal palette (one continuous color, no gray band) ---- */
+  --color-teal-base: #1d5b5c; /* single base for body + card + footer */
+  --color-teal-main: #3d8c8d; /* icon tiles */
+  --color-teal-deep: #0f4344; /* pressed / darker state */
+  --color-cream: #faf8f5;
+  --color-ink: #1a1a1a;
+}
+
+html,
+body {
+  background-color: #1d5b5c;
+  overscroll-behavior-y: none;
+}
+
+::selection {
+  background: #3d8c8d;
+  color: #faf8f5;
+}
+
+/* Thin themed scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #174c4d;
+}
+::-webkit-scrollbar-thumb {
+  background: #3d8c8d;
+  border-radius: 8px;
+  border: 2px solid #174c4d;
+}
+
+/* ================= Keyframes ================= */
+
+/* Wiggle + pop for icon on click */
+@keyframes icon-wiggle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  22% {
+    transform: rotate(-18deg) scale(1.22);
+  }
+  45% {
+    transform: rotate(13deg) scale(1.28);
+  }
+  65% {
+    transform: rotate(-8deg) scale(1.14);
+  }
+  82% {
+    transform: rotate(4deg) scale(1.18);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+.icon-wiggle {
+  animation: icon-wiggle 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  will-change: transform;
+}
+
+/* Staggered entrance */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.rise {
+  opacity: 0;
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--d, 0ms);
+  will-change: transform, opacity;
+}
+
+/* Slow floating decor */
+@keyframes floaty {
+  from {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+  to {
+    transform: translateY(-14px) rotate(var(--r, 0deg));
+  }
+}
+.floaty {
+  animation: floaty var(--dur, 8s) ease-in-out var(--fd, 0s) infinite alternate;
+  will-change: transform;
+}
+
+/* Soft halo pulse behind logo */
+@keyframes halo {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+.halo {
+  animation: halo 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+/* Gentle bob for the paw badge */
+@keyframes bob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-7px);
+  }
+}
+.bob {
+  animation: bob 3.2s ease-in-out infinite alternate;
+}
+
+/* Shine sweep across buttons on hover */
+.pill-shine {
+  position: relative;
+  overflow: hidden;
+}
+.pill-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(61, 140, 141, 0.14) 48%,
+    rgba(61, 140, 141, 0.14) 52%,
+    transparent 70%
+  );
+  transform: translateX(-130%) skewX(-12deg);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .pill-shine:hover::after {
+    transform: translateX(130%) skewX(-12deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-wiggle,
+  .rise,
+  .floaty,
+  .halo,
+  .bob {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
