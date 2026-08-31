@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Rayan Veterinary Clinic</title>
+<title>کلینیکی ڤێتێرنەری د. رەیان عەلی عەبدللە</title>
 <style>
 :root{
   --teal:#43B7B5;
@@ -54,21 +54,32 @@ body{
 
 h1{
   margin:0 0 6px;
-  font-size:24px;
+  font-size:26px;
   color:var(--teal-dark);
+  font-family:'Times New Roman', Times, serif;
 }
 
-.subtitle{
+.doctor-name{
+  margin:0 0 4px;
+  font-size:20px;
+  font-weight:bold;
+  color:var(--ink);
+  font-family:'Times New Roman', Times, serif;
+}
+
+.degree{
   margin:0;
   color:#4a6268;
-  font-size:15px;
-  line-height:1.6;
+  font-size:16px;
+  font-weight:bold;
+  font-family:'Times New Roman', Times, serif;
 }
 
 .links{
   display:flex;
   flex-direction:column;
   gap:10px;
+  margin-top:20px;
   margin-bottom:22px;
 }
 
@@ -84,6 +95,7 @@ h1{
   color:var(--ink);
   box-shadow:0 4px 12px rgba(0,0,0,.03);
   transition:all .2s ease;
+  font-family:'Times New Roman', Times, serif;
 }
 
 .link:hover{
@@ -114,13 +126,15 @@ h1{
 
 .link-title{
   font-weight:700;
-  font-size:15px;
+  font-size:16px;
   color:var(--teal-dark);
+  font-family:'Times New Roman', Times, serif;
 }
 
 .link-desc{
-  font-size:12px;
+  font-size:13px;
   color:#60787e;
+  font-family:'Times New Roman', Times, serif;
 }
 
 .arrow{
@@ -159,23 +173,26 @@ h1{
 
 .info-card h3{
   margin:0 0 6px;
-  font-size:15px;
+  font-size:16px;
   color:var(--teal-dark);
+  font-family:'Times New Roman', Times, serif;
 }
 
 .info-card p{
   margin:0;
-  font-size:13px;
+  font-size:14px;
   color:#4a6268;
   line-height:1.5;
+  font-family:'Times New Roman', Times, serif;
 }
 
 footer{
   text-align:center;
-  font-size:12px;
+  font-size:13px;
   color:#60787e;
   border-top:1px solid rgba(67,183,181,.2);
   padding-top:14px;
+  font-family:'Times New Roman', Times, serif;
 }
 </style>
 </head>
@@ -185,8 +202,9 @@ footer{
 
   <header class="hero">
     <div class="avatar">🐾</div>
-    <h1>Dr. Rayan Veterinary Clinic</h1>
-    <p class="subtitle">کلینیکی ڤێتێرنەری د. رەیان عەلی عبدللە BVM & S</p>
+    <h1>کلینیکی ڤێتێرنەری</h1>
+    <div class="doctor-name">د. رەیان عەلی عەبدللە</div>
+    <div class="degree">BVM & S</div>
   </header>
 
   <section class="links">
